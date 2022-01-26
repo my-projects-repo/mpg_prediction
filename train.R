@@ -1,12 +1,6 @@
 library(ggplot2)
 library(visreg)
-library(equatiomatic)
-
-sink.reset <- function(){
-  for(i in seq_len(sink.number())){
-    sink(NULL)
-  }
-}
+#library(equatiomatic)
 
 ## get data
 dat <- mtcars
