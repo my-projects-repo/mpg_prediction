@@ -1,6 +1,12 @@
 model: 
-mpg ~ wt
+mpg ~ wt + hp
 
 
 r-squared: 
-0.752832793658264
+0.826785451882791
+
+
+adjusted r-squared: 
+0.814839620978156
+
+
