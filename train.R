@@ -14,10 +14,10 @@ dat <- mtcars
 #   theme_minimal()
 
 ## Fit a linear regression model
-model <- lm(mpg ~ wt, data = dat)
+#model <- lm(mpg ~ wt, data = dat)
 
 ## Fit a multiple linear regression model
-#model <- lm(mpg ~ wt + hp, data = dat)
+model <- lm(mpg ~ wt + hp, data = dat)
 
 ## Fit a multiple linear regression model
 #model <- lm(mpg ~ wt + hp + disp, data = dat)
