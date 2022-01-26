@@ -21,7 +21,7 @@ model <- lm(mpg ~ wt, data = dat)
 
 ## output model r-squared to a txt file 
 model_stats <- summary(model)
-model_eq <- extract_eq(model)
+#model_eq <- extract_eq(model)
 
 fileConn<-file("model_metrics.txt","w")
 writeLines(c("model: ", as.character(model_stats$call)[2],"\n"), fileConn)
