@@ -14,7 +14,10 @@ dat <- mtcars
 #   theme_minimal()
 
 ## Fit a linear regression model
-model <- lm(mpg ~ wt, data = dat)
+#model <- lm(mpg ~ wt, data = dat)
+
+## Fit a multiple linear regression model
+model <- lm(mpg ~ wt + hp, data = dat)
 
 ## Fit a multiple linear regression model
 #model <- lm(mpg ~ wt + hp + disp, data = dat)
@@ -25,7 +28,8 @@ model_stats <- summary(model)
 
 fileConn<-file("model_metrics.txt","w")
 writeLines(c("model: ", as.character(model_stats$call)[2],"\n"), fileConn)
-writeLines(c("r-squared: ", model_stats$r.squared), fileConn)
+writeLines(c("r-squared: ", model_stats$r.squared, "\n"), fileConn)
+writeLines(c("adjusted r-squared: ", model_stats$adj.r.squared, "\n"), fileConn)
 close(fileConn)
 
 ## Visualize model fit
