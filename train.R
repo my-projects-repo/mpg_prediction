@@ -1,18 +1,17 @@
-library(ggplot2)
-library(visreg)
-#library(equatiomatic)
+#library(ggplot2)
+#library(visreg)
 
 ## get data
 dat <- mtcars
 
 ## visualize mpg vs. weight
-ggplot(dat, aes(x = wt, y = mpg)) +
-  geom_point() +
-  labs(
-    y = "Miles per gallon",
-    x = "Car's weight (1000 lbs)"
-  ) +
-  theme_minimal()
+# ggplot(dat, aes(x = wt, y = mpg)) +
+#   geom_point() +
+#   labs(
+#     y = "Miles per gallon",
+#     x = "Car's weight (1000 lbs)"
+#   ) +
+#   theme_minimal()
 
 ## Fit a linear regression model
 model <- lm(mpg ~ wt, data = dat)
@@ -30,7 +29,7 @@ writeLines(c("r-squared: ", model_stats$r.squared), fileConn)
 close(fileConn)
 
 ## Visualize model fit
-visreg(model, ask = F)
+#visreg(model, ask = F)
 
 png("Residuals.png")
 ## plot predicted vs. actual values
