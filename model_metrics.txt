@@ -1,0 +1,6 @@
+model: 
+mpg ~ wt
+
+
+r-squared: 
+0.752832793658264
