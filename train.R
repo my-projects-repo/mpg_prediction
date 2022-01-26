@@ -1,24 +1,17 @@
-library(ggplot2)
-library(visreg)
-library(equatiomatic)
-
-sink.reset <- function(){
-  for(i in seq_len(sink.number())){
-    sink(NULL)
-  }
-}
+#library(ggplot2)
+#library(visreg)
 
 ## get data
 dat <- mtcars
 
 ## visualize mpg vs. weight
-ggplot(dat, aes(x = wt, y = mpg)) +
-  geom_point() +
-  labs(
-    y = "Miles per gallon",
-    x = "Car's weight (1000 lbs)"
-  ) +
-  theme_minimal()
+# ggplot(dat, aes(x = wt, y = mpg)) +
+#   geom_point() +
+#   labs(
+#     y = "Miles per gallon",
+#     x = "Car's weight (1000 lbs)"
+#   ) +
+#   theme_minimal()
 
 ## Fit a linear regression model
 model <- lm(mpg ~ wt, data = dat)
@@ -28,7 +21,7 @@ model <- lm(mpg ~ wt, data = dat)
 
 ## output model r-squared to a txt file 
 model_stats <- summary(model)
-model_eq <- extract_eq(model)
+#model_eq <- extract_eq(model)
 
 fileConn<-file("model_metrics.txt","w")
 writeLines(c("model: ", as.character(model_stats$call)[2],"\n"), fileConn)
@@ -36,7 +29,7 @@ writeLines(c("r-squared: ", model_stats$r.squared), fileConn)
 close(fileConn)
 
 ## Visualize model fit
-visreg(model, ask = F)
+#visreg(model, ask = F)
 
 png("Residuals.png")
 ## plot predicted vs. actual values
