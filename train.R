@@ -13,6 +13,7 @@ dat <- mtcars
 #   ) +
 #   theme_minimal()
 
+
 ## Fit a linear regression model
 model <- lm(mpg ~ wt, data = dat)
 
